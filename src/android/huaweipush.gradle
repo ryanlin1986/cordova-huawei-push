@@ -1,16 +1,24 @@
- repositories{
-    jcenter()
-    flatDir{
-        dirs 'aars'
-    }
-}
+apply plugin:'com.huawei.agconnect'
+
 dependencies {
-    compile(name:'HMS-SDK-2.4.0.300', ext:'aar')
-    compile 'com.android.support:support-v4:23.4.0'
+    implementation 'com.huawei.hms:push:3.0.0.303'
 }
- android {
-    packagingOptions {
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/LICENSE'
+
+buildscript {
+    dependencies {
+        classpath 'com.huawei.agconnect:agcp:1.0.0.300'
     }
- }
+}
+
+buildscript {
+    repositories {
+        maven { url 'http://developer.huawei.com/repo/' }
+    }
+}
+
+
+allprojects {
+    repositories {
+        maven { url 'http://developer.huawei.com/repo/' }
+    }
+}
