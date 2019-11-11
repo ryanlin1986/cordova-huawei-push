@@ -1,16 +1,16 @@
 {
-  "name": "cordova-huawei-push2",
+  "name": "cordova-hms-push",
   "version": "0.0.1",
   "description": "Cordova huawei Push Plugin",
   "cordova": {
-    "id": "cordova-huawei-push",
+    "id": "cordova-hms-push",
     "platforms": [
       "android"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iflamed/cordova-huawei-push.git"
+    "url": "git+https://github.com/wininsoft/cordova-huawei-push.git"
   },
   "keywords": [
     "cordova",
