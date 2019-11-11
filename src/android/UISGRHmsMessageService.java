@@ -6,7 +6,7 @@ import android.util.Log;
 import com.huawei.hms.push.HmsMessageService;
 import com.huawei.hms.push.RemoteMessage;
 
-public class MyPushService extends HmsMessageService {
+public class UISGRHmsMessageService extends HmsMessageService {
     @Override
     public void onNewToken(String s) {
         super.onNewToken(s);
