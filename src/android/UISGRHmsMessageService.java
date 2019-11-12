@@ -7,6 +7,8 @@ import com.huawei.hms.push.HmsMessageService;
 import com.huawei.hms.push.RemoteMessage;
 
 public class UISGRHmsMessageService extends HmsMessageService {
+    String TAG="HMS Push";
+
     @Override
     public void onNewToken(String s) {
         super.onNewToken(s);

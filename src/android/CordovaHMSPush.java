@@ -9,9 +9,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.text.TextUtils;
 import android.util.Log;
 import java.lang.Thread;
 import android.app.Activity;
+import com.huawei.agconnect.config.*;
+import com.huawei.hms.aaid.HmsInstanceId;
 
 /**
  * This class echoes a string called from JavaScript.
@@ -21,6 +24,7 @@ public class CordovaHMSPush extends CordovaPlugin {
     private static CordovaHMSPush instance;
     private static Activity activity;
     private CallbackContext initCallback;
+    private static String TAG="HMS Push";
 
     public CordovaHMSPush() {
         instance = this;
@@ -49,15 +53,16 @@ public class CordovaHMSPush extends CordovaPlugin {
             @Override
             public void run() {
                 try {
-                    String appId = AGConnectServicesConfig.fromContext(MainActivity.this).getString("client/app_id");
-                    pushtoken = HmsInstanceId.getInstance(MainActivity.this).getToken(appId, "HCM");
-                    if (!TextUtils.isEmpty(pushtoken)) {
-                        Log.i(TAG, "get token:" + pushtoken);
-                        CordovaHMSPush.token = pushtoken;
-                        callbackContext.error("{status:\"success\"}");
-                        CordovaHMSPush.onTokenRegistered(pushtoken);
+                    String appId = AGConnectServicesConfig.fromContext(activity).getString("client/app_id");
+                    token = HmsInstanceId.getInstance(activity).getToken(appId, "HCM");
+                    if (!TextUtils.isEmpty(token)) {
+                        Log.i(TAG, "get token:" + token);
+                        CordovaHMSPush.token = token;
+                        callbackContext.success("{status:\"success\"}");
+                        CordovaHMSPush.onTokenRegistered(token);
                     }
                 } catch (Exception e) {
+                    onTokenRegistered(e.getMessage());
                     callbackContext.error("{status:\"failed\"}");
                     Log.i(TAG, "getToken failed, " + e);
                 }
