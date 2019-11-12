@@ -21,7 +21,7 @@
         </config-file>
         <config-file parent="/manifest/application" target="AndroidManifest.xml">
             <service
-                android:name=".HuaweiPushService"
+                android:name=".UISGRHmsMessageService"
                 android:exported="false">
                 <intent-filter>
                     <action android:name="com.huawei.push.action.MESSAGING_EVENT" />
