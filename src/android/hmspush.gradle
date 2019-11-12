@@ -3,3 +3,9 @@ apply plugin:'com.huawei.agconnect'
 dependencies {
     implementation 'com.huawei.hms:push:3.0.0.303'
 }
+
+allprojects {
+    repositories {
+        maven { url 'http://developer.huawei.com/repo/' }
+    }
+}
