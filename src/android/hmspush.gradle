@@ -3,22 +3,3 @@ apply plugin:'com.huawei.agconnect'
 dependencies {
     implementation 'com.huawei.hms:push:3.0.0.303'
 }
-
-buildscript {
-    dependencies {
-        classpath 'com.huawei.agconnect:agcp:1.0.0.300'
-    }
-}
-
-buildscript {
-    repositories {
-        maven { url 'http://developer.huawei.com/repo/' }
-    }
-}
-
-
-allprojects {
-    repositories {
-        maven { url 'http://developer.huawei.com/repo/' }
-    }
-}
