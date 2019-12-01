@@ -1,6 +1,6 @@
 {
   "name": "cordova-hms-push",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Cordova huawei Push Plugin",
   "cordova": {
     "id": "cordova-hms-push",
