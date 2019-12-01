@@ -1,13 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="cordova-hms-push" version="0.0.6" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>Cordova-Huawei-Push</name>
+    <name>Cordova-HMS-Push</name>
     <description>Cordova Huawei Push Plugin</description>
     <author>ryanlin@outlook.com</author>
     <license>MIT</license>
     <keywords>cordova,huawei,push,hmspush,hms</keywords>
-
-    <preference name="APPID" />
-    <preference name="PACKAGENAME" />
 
     <dependency id="cordova-plugin-device" />
     <js-module name="CordovaHMSPush" src="www/cordova-hms-push.js">
